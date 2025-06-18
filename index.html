@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.G DESIGN - عثمان الغول للتصميم الداخلي والذكاء الاصطناعي</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #111111 0%, #1F1F1F 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+        }
+        
+        .text-gold {
+            color: #FFD700;
+        }
+        
+        .border-gold {
+            border-color: #FFD700;
+        }
+        
+        .hover-gold:hover {
+            background-color: #FFD700;
+            color: #111111;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+        
+        .design-school-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: #1F1F1F;
+        }
+        
+        .design-school-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .design-school-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(17, 17, 17, 0.95));
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .design-school-card:hover .design-school-overlay {
+            transform: translateY(0);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translatey(0px); }
+            50% { transform: translatey(-20px); }
+            100% { transform: translatey(0px); }
+        }
+        
+        .pulse-gold {
+            animation: pulse-gold 2s infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        @media print {
+            .section-padding {
+                padding: 40px 0;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            max-height: 80%;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .close:hover {
+            color: #FFD700;
+        }
+
+        .design-school-description {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body class="scroll-smooth gradient-bg text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gold">O.G DESIGN</div>
+                <div class="hidden md:flex space-x-reverse space-x-8">
+                    <a href="#home" class="hover-gold px-4 py-2 rounded transition duration-300">الرئيسية</a>
+                    <a href="#about" class="hover-gold px-4 py-2 rounded transition duration-300">من نحن</a>
+                    <a href="#services" class="hover-gold px-4 py-2 rounded transition duration-300">خدماتنا</a>
+                    <a href="#design-schools" class="hover-gold px-4 py-2 rounded transition duration-300">المدارس التصميمية</a>
+                    <a href="#portfolio" class="hover-gold px-4 py-2 rounded transition duration-300">أعمالنا</a>
+                    <a href="#courses" class="hover-gold px-4 py-2 rounded transition duration-300">الدورات</a>
+                    <a href="#contact" class="hover-gold px-4 py-2 rounded transition duration-300">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section-padding min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 text-center lg:text-right mb-12 lg:mb-0">
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                        <span class="text-gold">O.G</span> DESIGN
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-gray-300">
+                        نحو مستقبل تصميم ذكي بدمج الذكاء الاصطناعي والهوية المعمارية
+                    </p>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">المصمم الداخلي</h2>
+                        <h3 class="text-3xl font-bold text-gold">عثمان محمد غول</h3>
+                        <p class="text-lg text-gray-400 mt-2">مدرب دولي • خبرة +8 سنوات • متخصص AI</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                        <a href="#contact" class="gold-gradient text-black px-8 py-4 rounded-full font-semibold hover:shadow-lg transition duration-300 pulse-gold">
+                            احجز استشارتك المجانية
+                        </a>
+                        <a href="#portfolio" class="border-2 border-gold text-gold px-8 py-4 rounded-full font-semibold hover-gold transition duration-300">
+                            شاهد أعمالنا
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-center">
+                    <div class="floating-animation">
+                        <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/WhatsApp%20Image%202023-05-04%20at%2010.04.14%20AM.jpeg" 
+                             alt="عثمان الغول" 
+                             class="w-80 h-80 rounded-full object-cover mx-auto shadow-2xl border-4 border-gold">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section-padding bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="card-hover transition duration-300">
+                    <div class="stats-counter">+70</div>
+                    <p class="text-lg text-gray-300">مشروع مكتمل</p>
+                </div>
+                <div class="card-hover transition duration-300">
+                    <div class="stats-counter">+60</div>
+                    <p class="text-lg text-gray-300">عميل راضٍ</p>
+                </div>
+                <div class="card-hover transition duration-300">
+                    <div class="stats-counter">8</div>
+                    <p class="text-lg text-gray-300">سنوات خبرة</p>
+                </div>
+                <div class="card-hover transition duration-300">
+                    <div class="stats-counter">+40</div>
+                    <p class="text-lg text-gray-300">طالب متدرب</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    من <span class="text-gold">نحن</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-gold">عثمان محمد غول</h3>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                        مصمم داخلي بخبرة أكثر من 8 سنوات، محاضر جامعي سابق، طالب ماجستير حالياً بجامعة النجاح، 
+                        ومختص بدمج أدوات الذكاء الاصطناعي في التصميم الداخلي.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-8 text-gray-300">
+                        أطلق أول دورة فلسطينية متخصصة بعنوان "المصمم الذكي" لتعليم المصممين كيفية استخدام 
+                        تقنيات الذكاء الاصطناعي في عملهم التصميمي.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-800 p-6 rounded-lg card-hover transition duration-300">
+                            <i class="fas fa-graduation-cap text-gold text-3xl mb-4"></i>
+                            <h4 class="font-semibold mb-2">التعليم</h4>
+                            <p class="text-sm text-gray-400">طالب ماجستير - جامعة النجاح</p>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-lg card-hover transition duration-300">
+                            <i class="fas fa-award text-gold text-3xl mb-4"></i>
+                            <h4 class="font-semibold mb-2">الخبرة</h4>
+                            <p class="text-sm text-gray-400">محاضر جامعي سابق</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                        <h4 class="text-2xl font-bold mb-4 text-gold">رؤيتنا</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            نسعى لتطوير مجال التصميم الداخلي من خلال دمج التقنيات الحديثة والذكاء الاصطناعي 
+                            لخلق مساحات مبتكرة تلبي احتياجات العصر الحديث.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                        <h4 class="text-2xl font-bold mb-4 text-gold">مهمتنا</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            تقديم خدمات تصميم داخلي عالية الجودة وتدريب المصممين على استخدام أحدث التقنيات 
+                            في مجال التصميم والذكاء الاصطناعي.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="text-gold">خدماتنا</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    نقدم مجموعة شاملة من الخدمات التصميمية والتدريبية باستخدام أحدث التقنيات
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- التصميم الداخلي السكني -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="text-gold text-5xl mb-6">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">التصميم السكني</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        تصميم داخلي شامل للفلل والشقق والمنازل يشمل الصالات، المطابخ، غرف النوم والحمامات
+                    </p>
+                    <div class="text-gold font-semibold">
+                        يبدأ من 15$ للمتر المربع
+                    </div>
+                </div>
+
+                <!-- التصميم التجاري -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="text-gold text-5xl mb-6">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">التصميم التجاري</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        تصميم المحلات التجارية، المعارض، الكافيهات، المطاعم والمكاتب بطريقة احترافية
+                    </p>
+                    <div class="text-gold font-semibold">
+                        حسب حجم المشروع
+                    </div>
+                </div>
+
+                <!-- التصميم ثلاثي الأبعاد -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="text-gold text-5xl mb-6">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">التصميم ثلاثي الأبعاد</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        نماذج 3D واقعية باستخدام أدوات متطورة مثل Coohom وVeras وSketchUp
+                    </p>
+                    <div class="text-gold font-semibold">
+                        تقنيات متقدمة
+                    </div>
+                </div>
+
+                <!-- الاستشارات عن بُعد -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="text-gold text-5xl mb-6">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">الاستشارات عن بُعد</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        استشارات تصميمية مباشرة عبر Zoom لتقديم النصائح والإرشادات المهنية
+                    </p>
+                    <div class="text-gold font-semibold">
+                        جلسات مخصصة
+                    </div>
+                </div>
+
+                <!-- التصميم الخارجي -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="text-gold text-5xl mb-6">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">التصميم الخارجي</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        تصميم الواجهات، البوابات، المداخل وتنسيق الحدائق والمساحات الخارجية
+                    </p>
+                    <div class="text-gold font-semibold">
+                        تصاميم عصرية
+                    </div>
+                </div>
+
+                <!-- التدريب والدورات -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="text-gold text-5xl mb-6">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">التدريب والدورات</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        دورات احترافية لتعليم أدوات الذكاء الاصطناعي في التصميم مثل Midjourney وGenspark
+                    </p>
+                    <div class="text-gold font-semibold">
+                        "المصمم الذكي"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Schools Section -->
+    <section id="design-schools" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    المدارس <span class="text-gold">التصميمية</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    استكشف أساليب التصميم المختلفة واختر ما يناسب ذوقك وشخصيتك
+                </p>
+            </div>
+
+            <!-- Main Design Schools Image -->
+            <div class="text-center mb-16">
+                <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/صورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.53.50.jpg" 
+                     alt="المدارس التصميمية" 
+                     class="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl cursor-pointer hover:shadow-3xl transition duration-300"
+                     onclick="openModal(this.src)">
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- بوهو شيك -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/صورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.53.58.jpg" 
+                         alt="بوهو شيك" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">بوهو شيك</h3>
+                        <p class="design-school-description">أسلوب عصري يجمع بين الأناقة والراحة مع لمسات بوهيمية مميزة، يتميز بالألوان الدافئة والمواد الطبيعية</p>
+                    </div>
+                </div>
+
+                <!-- كلاسيك -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/شصورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.54.00.jpg" 
+                         alt="كلاسيك" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">كلاسيك</h3>
+                        <p class="design-school-description">تصميم تقليدي أنيق يتميز بالفخامة والتفاصيل الكلاسيكية الراقية مع الأثاث التقليدي المميز</p>
+                    </div>
+                </div>
+
+                <!-- صناعي -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/ششصورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.54.01.jpg" 
+                         alt="صناعي" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">صناعي</h3>
+                        <p class="design-school-description">أسلوب عصري يستخدم المواد الخام كالخشب والحديد والخرسانة مع أسقف مكشوفة وأنابيب ظاهرة لإطلالة صناعية مميزة</p>
+                    </div>
+                </div>
+
+                <!-- نيوكلاسيك -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/ششششصورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.54.00.jpg" 
+                         alt="نيوكلاسيك" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">نيوكلاسيك</h3>
+                        <p class="design-school-description">مزيج متوازن بين الكلاسيكية التقليدية واللمسات العصرية، يتميز بأسقف خشبية دافئة وأثاث أنيق مع إضاءة غير مباشرة</p>
+                    </div>
+                </div>
+
+                <!-- مودرن -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/شششششصورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.54.02.jpg" 
+                         alt="مودرن" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">مودرن</h3>
+                        <p class="design-school-description">تصميم عصري يركز على البساطة والوظائف العملية مع خطوط نظيفة وألوان محايدة وتقنيات حديثة</p>
+                    </div>
+                </div>
+
+                <!-- التقليلية -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/سصورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.53.59.jpg" 
+                         alt="التقليلية" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">التقليلية</h3>
+                        <p class="design-school-description">أسلوب يؤمن بأن "الأقل هو الأكثر" مع التركيز على الضروريات فقط والمساحات المفتوحة والألوان البيضاء</p>
+                    </div>
+                </div>
+
+                <!-- بوهيمي -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/سسسصورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.53.59.jpg" 
+                         alt="بوهيمي" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">بوهيمي</h3>
+                        <p class="design-school-description">أسلوب حر ومبدع يجمع بين الألوان الزاهية والأنماط المتنوعة مع المواد الطبيعية والإكسسوارات الفنية</p>
+                    </div>
+                </div>
+
+                <!-- اسكندنافي -->
+                <div class="design-school-card">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/images/سسسسسصورة%20واتساب%20بتاريخ%202023-09-17%20في%2016.53.59.jpg" 
+                         alt="اسكندنافي" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="design-school-overlay">
+                        <h3 class="text-xl font-bold mb-2 text-gold">اسكندنافي</h3>
+                        <p class="design-school-description">تصميم شمالي يتميز بالبساطة والألوان الفاتحة والمواد الطبيعية مع التركيز على الإضاءة الطبيعية والراحة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    معرض <span class="text-gold">أعمالنا</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    مجموعة مختارة من أفضل مشاريعنا المكتملة
+                </p>
+            </div>
+
+            <!-- Instagram Reels Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-center text-gold">مقاطع من أعمالنا</h3>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-2xl card-hover transition duration-300">
+                        <div class="video-container mb-4">
+                            <iframe src="https://www.instagram.com/reel/C3NirbdiR_y/embed" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h4 class="font-semibold text-gold mb-2">تصميم صالة عصرية</h4>
+                        <p class="text-sm text-gray-400">تصميم داخلي أنيق يجمع بين الحداثة والراحة</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-6 rounded-2xl card-hover transition duration-300">
+                        <div class="video-container mb-4">
+                            <iframe src="https://www.instagram.com/reel/DEhZVuiCmaZ/embed" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h4 class="font-semibold text-gold mb-2">مطبخ عصري</h4>
+                        <p class="text-sm text-gray-400">تصميم مطبخ متكامل بأحدث التقنيات</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-6 rounded-2xl card-hover transition duration-300">
+                        <div class="video-container mb-4">
+                            <iframe src="https://www.instagram.com/reel/DFXp25NirDo/embed" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h4 class="font-semibold text-gold mb-2">غرفة معيشة</h4>
+                        <p class="text-sm text-gray-400">مساحة مريحة للعائلة بتصميم عملي</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Gallery -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/سسصورة%20واتساب%20بتاريخ%202023-08-21%20في%2015.52.17.jpg" 
+                         alt="مشروع 1" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gold">فيلا عصرية</h3>
+                        <p class="text-gray-400 text-sm">تصميم شامل لفيلا بمساحة 400 متر مربع</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/سصورة%20واتساب%20بتاريخ%202023-08-21%20في%2015.52.17.jpg" 
+                         alt="مشروع 2" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gold">شقة سكنية</h3>
+                        <p class="text-gray-400 text-sm">تصميم داخلي لشقة بأسلوب مودرن</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/صورة%20واتساب%20بتاريخ%202023-07-31%20في%2009.46.19.jpg" 
+                         alt="مشروع 3" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gold">مكتب تجاري</h3>
+                        <p class="text-gray-400 text-sm">تصميم مكتب بطابع مهني وعصري</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/صورة%20واتساب%20بتاريخ%202023-07-31%20في%2009.49.49.jpg" 
+                         alt="مشروع 4" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gold">كافيه عصري</h3>
+                        <p class="text-gray-400 text-sm">تصميم كافيه بأجواء مريحة وجذابة</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/صورة%20واتساب%20بتاريخ%202023-08-08%20في%2013.43.21.jpg" 
+                         alt="مشروع 5" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gold">صالة استقبال</h3>
+                        <p class="text-gray-400 text-sm">تصميم أنيق لصالة استقبال فخمة</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl overflow-hidden card-hover transition duration-300">
+                    <img src="https://raw.githubusercontent.com/OTHMANGHOUL/smart-designer/refs/heads/main/صورة%20واتساب%20بتاريخ%202023-08-08%20في%2013.44.22.jpg" 
+                         alt="مشروع 6" 
+                         class="w-full h-64 object-cover cursor-pointer"
+                         onclick="openModal(this.src)">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gold">غرفة نوم</h3>
+                        <p class="text-gray-400 text-sm">تصميم غرفة نوم بلمسة عصرية راقية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    الدورات <span class="text-gold">التدريبية</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    برامج تدريبية متخصصة في دمج الذكاء الاصطناعي مع التصميم الداخلي
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- المصمم الذكي -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="text-center mb-8">
+                        <div class="text-gold text-6xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 text-gold">المصمم الذكي</h3>
+                        <p class="text-lg text-gray-300 mb-6">
+                            أول دورة فلسطينية متخصصة في دمج أدوات الذكاء الاصطناعي مع التصميم الداخلي
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-3"></i>
+                            <span>تعلم استخدام Midjourney للتصميم</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-3"></i>
+                            <span>إتقان أدوات COOHOM و Veras</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-3"></i>
+                            <span>استخدام Genspark و Flo و Manus</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-3"></i>
+                            <span>تطبيقات عملية ومشاريع حقيقية</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-3"></i>
+                            <span>شهادة إتمام معتمدة</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-xl mb-8">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-gold">40+</div>
+                                <div class="text-sm text-gray-400">طالب متدرب</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gold">350₪</div>
+                                <div class="text-sm text-gray-400">رسوم الدورة</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full gold-gradient text-black py-4 rounded-xl font-bold text-lg hover:shadow-lg transition duration-300">
+                        سجل في الدورة
+                    </button>
+                </div>
+
+                <!-- دورات قادمة -->
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-6 rounded-2xl card-hover transition duration-300">
+                        <h4 class="text-xl font-bold mb-3 text-gold">التصميم ثلاثي الأبعاد المتقدم</h4>
+                        <p class="text-gray-300 mb-4">دورة متخصصة في إنشاء نماذج 3D احترافية</p>
+                        <div class="text-sm text-gold">قريباً</div>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-2xl card-hover transition duration-300">
+                        <h4 class="text-xl font-bold mb-3 text-gold">إدارة مشاريع التصميم</h4>
+                        <p class="text-gray-300 mb-4">تعلم كيفية إدارة المشاريع من البداية للنهاية</p>
+                        <div class="text-sm text-gold">قريباً</div>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-2xl card-hover transition duration-300">
+                        <h4 class="text-xl font-bold mb-3 text-gold">التسويق للمصممين</h4>
+                        <p class="text-gray-300 mb-4">بناء العلامة التجارية وتسويق الخدمات التصميمية</p>
+                        <div class="text-sm text-gold">قريباً</div>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-2xl card-hover transition duration-300">
+                        <h4 class="text-xl font-bold mb-3 text-gold">الواقع المعزز في التصميم</h4>
+                        <p class="text-gray-300 mb-4">استخدام تقنيات AR لعرض التصاميم على العملاء</p>
+                        <div class="text-sm text-gold">قريباً</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    آراء <span class="text-gold">عملائنا</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center ml-4">
+                            <i class="fas fa-user text-black text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">أحمد محمد</h4>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "تجربة رائعة مع عثمان! تصميم فيلتي كان أكثر من المتوقع. اهتمام بالتفاصيل واستخدام التقنيات الحديثة."
+                    </p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center ml-4">
+                            <i class="fas fa-user text-black text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">سارة أحمد</h4>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "دورة المصمم الذكي غيرت طريقة عملي تماماً. تعلمت أدوات جديدة وزادت كفاءتي في العمل بشكل مذهل."
+                    </p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl card-hover transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center ml-4">
+                            <i class="fas fa-user text-black text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">محمد علي</h4>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "احترافية عالية في التعامل والتصميم. استشارة عن بُعد كانت مفيدة جداً وساعدتني في اتخاذ القرارات الصحيحة."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    الأسئلة <span class="text-gold">الشائعة</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-gold">كيف يتم تسعير المشاريع؟</h3>
+                    <p class="text-gray-300">التسعير يبدأ من 15 دولار للمتر المربع للتصميم السكني، ويختلف حسب نوع المشروع وتعقيده. نقدم استشارة مجانية لتحديد التكلفة الدقيقة.</p>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-gold">ما هي مدة إنجاز التصميم؟</h3>
+                    <p class="text-gray-300">تختلف المدة حسب حجم المشروع، عادة من أسبوعين لشقة صغيرة إلى شهرين لفيلا كاملة. نحدد الجدول الزمني بدقة في بداية كل مشروع.</p>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-gold">هل تقدم خدماتك دولياً؟</h3>
+                    <p class="text-gray-300">نعم، نقدم الاستشارات والتصاميم عن بُعد لجميع أنحاء العالم العربي من خلال تقنيات الاتصال الحديثة.</p>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-gold">ما هي أدوات الذكاء الاصطناعي التي تستخدمها؟</h3>
+                    <p class="text-gray-300">نستخدم مجموعة متطورة من الأدوات مثل Midjourney، COOHOM، Veras، Genspark، Flo، وManus لضمان أفضل النتائج.</p>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-gold">هل تشمل الخدمة الرسومات التنفيذية؟</h3>
+                    <p class="text-gray-300">نعم، نقدم رسومات تنفيذية مفصلة وخطط عمل شاملة مع كافة التفاصيل التقنية اللازمة للتنفيذ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    تواصل <span class="text-gold">معنا</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    نحن هنا لمساعدتك في تحويل أحلامك التصميمية إلى واقع
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-reverse space-x-6">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center">
+                            <i class="fas fa-phone text-black text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">رقم الواتساب</h3>
+                            <p class="text-gray-300">+972 598 214 213</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-reverse space-x-6">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center">
+                            <i class="fas fa-envelope text-black text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">البريد الإلكتروني</h3>
+                            <p class="text-gray-300">for.othman98@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-reverse space-x-6">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-black text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">الموقع</h3>
+                            <p class="text-gray-300">فلسطين - طولكرم</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="pt-8">
+                        <h3 class="text-2xl font-bold mb-6 text-gold">تابعنا على</h3>
+                        <div class="flex space-x-reverse space-x-6">
+                            <a href="https://instagram.com/othmanghoul" 
+                               target="_blank" 
+                               class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition duration-300">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://facebook.com/OthmanGhoul" 
+                               target="_blank" 
+                               class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition duration-300">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/message/OYBO2UJZXBGUJ1" 
+                               target="_blank" 
+                               class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition duration-300">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-800 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-gold">احجز استشارتك المجانية</h3>
+                    <form action="https://formspree.io/f/for.othman98@gmail.com" method="POST" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">الاسم الكامل</label>
+                            <input type="text" name="name" required 
+                                   class="w-full p-4 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">رقم الواتساب</label>
+                            <input type="tel" name="phone" required 
+                                   class="w-full p-4 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">نوع المشروع</label>
+                            <select name="project-type" required 
+                                    class="w-full p-4 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                                <option value="">اختر نوع المشروع</option>
+                                <option value="residential">تصميم سكني</option>
+                                <option value="commercial">تصميم تجاري</option>
+                                <option value="consultation">استشارة</option>
+                                <option value="training">تدريب</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">المدينة</label>
+                            <input type="text" name="city" required 
+                                   class="w-full p-4 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">تفاصيل المشروع</label>
+                            <textarea name="message" rows="4" 
+                                      class="w-full p-4 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gold" 
+                                      placeholder="أخبرنا عن مشروعك..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full gold-gradient text-black py-4 rounded-lg font-bold text-lg hover:shadow-lg transition duration-300">
+                            أرسل طلب الاستشارة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-gold mb-4">O.G DESIGN</div>
+                <p class="text-gray-400 mb-6">نحو مستقبل تصميم ذكي بدمج الذكاء الاصطناعي والهوية المعمارية</p>
+                <div class="text-sm text-gray-500">
+                    © 2024 O.G DESIGN. جميع الحقوق محفوظة.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Image modal functionality
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const count = parseInt(counter.textContent.replace(/\D/g, ''));
+                const increment = target / 200;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.replace(/\d+/g, target);
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = counter.textContent.replace(/\d+/g, Math.floor(current));
+                    }
+                }, 10);
+            });
+        }
+
+        // Trigger counter animation when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-counter').closest('section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            // Implementation for mobile menu if needed
+        }
+    </script>
+</body>
+</html>
